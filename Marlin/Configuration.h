@@ -35,7 +35,7 @@
 #define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // will be shown during bootup in line 1
 #define STRING_SPLASH_LINE2 STRING_DISTRIBUTION_DATE // will be shown during bootup in line 2
 
-#define STRING_VERSION_CONFIG_H __DATE__ "17/05/2016 2118h" __TIME__ // build date and time
+#define STRING_VERSION_CONFIG_H __DATE__ " " __TIME__ // build date and time
 #define STRING_CONFIG_H_AUTHOR "(Simon Paarlberg)" // Who made the changes.
 
 // SERIAL_PORT selects which serial port should be used for communication with the host.
