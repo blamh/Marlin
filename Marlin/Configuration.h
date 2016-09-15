@@ -502,10 +502,11 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // http://reprap.org/wiki/Prusa_i3_Rework_Firmware
 // http://reprap.org/wiki/Prusa_i3_Rework_Electronics_and_wiring
 // http://reprap.org/wiki/Triffid_Hunter%27s_Calibration_Guide
-#define STEPS_PER_REVOLUTION_X 3200
-#define STEPS_PER_REVOLUTION_Y 3200
-#define STEPS_PER_REVOLUTION_Z 3200
-#define STEPS_PER_REVOLUTION_E 3200
+// A 1.8 degree motor at 1/16th microstepping would take 3200 microsteps to make a full revolution.
+#define STEPS_PER_REVOLUTION_X (360 / 1.8) * 16 // 3200
+#define STEPS_PER_REVOLUTION_Y (360 / 1.8) * 16 // 3200
+#define STEPS_PER_REVOLUTION_Z (360 / 1.8) * 16 // 3200
+#define STEPS_PER_REVOLUTION_E (360 / 1.8) * 16 // 3200
 
 // http://3dnielsen.dk/product.php?id_product=478
 #define IDLER_TEETH_X 18 // 18 teeth
@@ -522,10 +523,10 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define PINCH_WHEEL_DIAMETER 7
 
 // default settings
-#define AXIS_STEPS_PER_UNIT_X (STEPS_PER_REVOLUTION_X / IDLER_TEETH_X / BELT_PITCH_X) //* (20.0/19.70)
+#define AXIS_STEPS_PER_UNIT_X (STEPS_PER_REVOLUTION_X / IDLER_TEETH_X / BELT_PITCH_X) // 3200/18/2 = 88.8
 #define AXIS_STEPS_PER_UNIT_Y (STEPS_PER_REVOLUTION_Y / IDLER_TEETH_Y / BELT_PITCH_Y) //* (20.0/19.65)
 #define AXIS_STEPS_PER_UNIT_Z (STEPS_PER_REVOLUTION_Z / PITCH_OF_Z_ROD) * (12.0/12.05) //* (12.0/11.85)
-#define AXIS_STEPS_PER_UNIT_E (STEPS_PER_REVOLUTION_E * EXTRUDER_GEAR_RATIO / (PINCH_WHEEL_DIAMETER * PI)) * (100.0/167.0)
+#define AXIS_STEPS_PER_UNIT_E (STEPS_PER_REVOLUTION_E * EXTRUDER_GEAR_RATIO / (PINCH_WHEEL_DIAMETER * PI)) * (100.0/167.0) * (100/99.15)
 
 #define DEFAULT_AXIS_STEPS_PER_UNIT {AXIS_STEPS_PER_UNIT_X, AXIS_STEPS_PER_UNIT_Y, AXIS_STEPS_PER_UNIT_Z, AXIS_STEPS_PER_UNIT_E}
 #define DEFAULT_MAX_FEEDRATE          {500, 500, 2, 25} // (mm/sec)
