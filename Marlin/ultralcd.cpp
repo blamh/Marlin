@@ -747,10 +747,10 @@ static void lcd_control_menu()
     MENU_ITEM(submenu, MSG_MOTION, lcd_control_motion_menu);
 	MENU_ITEM(submenu, MSG_VOLUMETRIC, lcd_control_volumetric_menu);
 
-#ifdef DOGLCD
-//    MENU_ITEM_EDIT(int3, MSG_CONTRAST, &lcd_contrast, 0, 63);
-    MENU_ITEM(submenu, MSG_CONTRAST, lcd_set_contrast);
-#endif
+// #ifdef DOGLCD
+// //    MENU_ITEM_EDIT(int3, MSG_CONTRAST, &lcd_contrast, 0, 63);
+//     MENU_ITEM(submenu, MSG_CONTRAST, lcd_set_contrast);
+// #endif
 #ifdef FWRETRACT
     MENU_ITEM(submenu, MSG_RETRACT, lcd_control_retract_menu);
 #endif
