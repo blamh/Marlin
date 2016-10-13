@@ -188,9 +188,9 @@
 //    #define  DEFAULT_Kd 66.47
 
     // http://reprap.org/wiki/PID_Tuning
-    #define  DEFAULT_Kp 42.94
-    #define  DEFAULT_Ki 5.64
-    #define  DEFAULT_Kd 81.79
+    #define  DEFAULT_Kp 38.52
+    #define  DEFAULT_Ki 5.06
+    #define  DEFAULT_Kd 73.36
 
 #endif // PIDTEMP
 
@@ -494,7 +494,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 
 //// MOVEMENT SETTINGS
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E
-#define HOMING_FEEDRATE {50*60, 50*60, 2.5*60, 0}  // set the homing speeds (mm/min)
+#define HOMING_FEEDRATE {50*60, 50*60, 10*60, 0}  // set the homing speeds (mm/min)
 
 // From https://www.matterhackers.com/news/3d-printer-firmware-settings-stepper-motor-configuration
 // http://prusaprinters.org/calculator/
@@ -516,7 +516,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define BELT_PITCH_X 2 // Pitch: 2mm
 #define BELT_PITCH_Y 2 // Pitch: 2mm
 
-#define PITCH_OF_Z_ROD 2 // M8 2 mm pitch pr rotation.
+#define PITCH_OF_Z_ROD 8 // M8 8 mm pitch pr rotation.
 
 // makergear extruder box
 #define EXTRUDER_GEAR_RATIO 1
@@ -525,13 +525,12 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // default settings
 #define AXIS_STEPS_PER_UNIT_X (STEPS_PER_REVOLUTION_X / IDLER_TEETH_X / BELT_PITCH_X) // 3200/18/2 = 88.8
 #define AXIS_STEPS_PER_UNIT_Y (STEPS_PER_REVOLUTION_Y / IDLER_TEETH_Y / BELT_PITCH_Y) // 3200/18/2 = 88.8
-#define AXIS_STEPS_PER_UNIT_Z (STEPS_PER_REVOLUTION_Z / PITCH_OF_Z_ROD) // 3200/2 = 1600
+#define AXIS_STEPS_PER_UNIT_Z (STEPS_PER_REVOLUTION_Z / PITCH_OF_Z_ROD) // 3200/8 = 400
 #define AXIS_STEPS_PER_UNIT_E (STEPS_PER_REVOLUTION_E * EXTRUDER_GEAR_RATIO / (PINCH_WHEEL_DIAMETER * PI)) * (100.0/167.0) * (100/99.15)
 
 #define DEFAULT_AXIS_STEPS_PER_UNIT {AXIS_STEPS_PER_UNIT_X, AXIS_STEPS_PER_UNIT_Y, AXIS_STEPS_PER_UNIT_Z, AXIS_STEPS_PER_UNIT_E}
-#define DEFAULT_MAX_FEEDRATE          {500, 500, 2, 25} // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {1000,2000,20,1000} // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
-// #define DEFAULT_MAX_ACCELERATION      {9000,9000,100,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_MAX_FEEDRATE          {500, 500, 60, 25} // (mm/sec)
+#define DEFAULT_MAX_ACCELERATION      {1000,2000,60,1000} // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          3000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  300    // X, Y, Z and E max acceleration in mm/s^2 for retracts
