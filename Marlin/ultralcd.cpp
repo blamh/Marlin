@@ -45,6 +45,7 @@ char lcd_status_message[LCD_WIDTH+1] = WELCOME_MSG;
 
 void copy_and_scalePID_i();
 void copy_and_scalePID_d();
+void lcd_preheat_pla0();
 
 /* Different menus */
 static void lcd_status_screen();
@@ -340,6 +341,7 @@ static void lcd_main_menu()
     {
         MENU_ITEM(submenu, MSG_TUNE, lcd_tune_menu);
     }else{
+        MENU_ITEM(function, MSG_PREHEAT_PLA, lcd_preheat_pla0);
         MENU_ITEM(submenu, MSG_PREPARE, lcd_prepare_menu);
 #ifdef DELTA_CALIBRATION_MENU
         MENU_ITEM(submenu, MSG_DELTA_CALIBRATE, lcd_delta_calibrate_menu);
