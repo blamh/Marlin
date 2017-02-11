@@ -516,7 +516,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define BELT_PITCH_X 2 // Pitch: 2mm
 #define BELT_PITCH_Y 2 // Pitch: 2mm
 
-#define PITCH_OF_Z_ROD 8 // M8 8 mm pitch pr rotation.
+#define PITCH_OF_Z_ROD 8 * (40/39) // M8 8 mm pitch pr rotation.
 
 // makergear extruder box
 #define EXTRUDER_GEAR_RATIO 1
