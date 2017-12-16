@@ -370,9 +370,9 @@
   //#define  DEFAULT_Kd 440
 
   // http://reprap.org/wiki/PID_Tuning
-  #define  DEFAULT_Kp 46.56
-  #define  DEFAULT_Ki 6.06
-  #define  DEFAULT_Kd 89.42
+  #define  DEFAULT_Kp 73.19
+  #define  DEFAULT_Ki 11.75
+  #define  DEFAULT_Kd 113.99
 
 #endif // PIDTEMP
 
